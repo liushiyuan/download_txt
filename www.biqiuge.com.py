@@ -56,7 +56,9 @@ end = "https://www.biqiuge.com/book/10563/"
 if __name__ == "__main__":
     chromedriver = "C:\\Users\\Administrator\\PycharmProjects\\downloader\\chromedriver.exe"
     os.environ["webdriver.chrome.driver"] = chromedriver
-    driver = webdriver.Chrome(chromedriver)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    driver = webdriver.Chrome(chromedriver， chrome_options=chrome_options)
 
     current = begin
     i = 1
